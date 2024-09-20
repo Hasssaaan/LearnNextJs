@@ -1,6 +1,6 @@
 'use client'
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 export default function Home() {
   //const counter =10;
   const [counter,setCounter]=useState(0)
@@ -23,7 +23,12 @@ export default function Home() {
 
   )
   }
- 
+ useEffect(()=>{
+  console.log("Component Render")
+  return ()=>{
+    console.log("Unmount")
+  };
+ },[counter])
   return (
     <div className="border border-gray-300 rounded-md p-4 ">
       <button className="bg-blue-500 hover:bg-blue-700 border border-gray-300 p-5" onClick={handleMinus}>-</button>
