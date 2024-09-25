@@ -26,7 +26,7 @@ export default function Home() {
  useEffect(()=>{
   console.log("Component Render")
   return ()=>{
-    console.log("Unmount")
+    alert("Unmount")
   };
  },[counter])
   return (
